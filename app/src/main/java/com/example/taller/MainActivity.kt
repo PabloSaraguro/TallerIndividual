@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         tablamult()
         listadoparalelo()
         calculariva()
+        validadcionCI()
 
     }
 
@@ -102,6 +103,8 @@ class MainActivity : AppCompatActivity() {
 
     fun validadcionCI(){
 
+        println("Validación de CI")
+
         val ci = 1105721912
         val cedula= arrayListOf<Int>()
         var comprobador = 0
@@ -139,14 +142,16 @@ class MainActivity : AppCompatActivity() {
         if ((comprobador%10)!=0){
             b = comprobador/10
             b.toInt()
-            b = (b++)*10
+            b = (b+1)*10
 
         }else{
             b = 0
         }
 
-        if(( b- comprobador) = cedula.last()){
-
+        if(( b - comprobador) == cedula.last()){
+            println("Número de CI CORRECTA")
+        }else{
+            println("Número de CI INCORRECTA")
         }
 
 
